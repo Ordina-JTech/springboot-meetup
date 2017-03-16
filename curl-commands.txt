@@ -1,0 +1,4 @@
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/receipies -d "{\"name\":\"vlaflip\",\"ingredients\":\"vlasoorten\",\"description\":\"mengen maar!\"}"
+
+curl http://localhost:8080/receipies
+
