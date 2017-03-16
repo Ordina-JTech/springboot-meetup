@@ -1,4 +1,4 @@
-curl -H "Content-Type: application/json" -X POST http://localhost:8080/receipies -d "{\"name\":\"vlaflip\",\"ingredients\":\"vlasoorten\",\"description\":\"mengen maar!\"}"
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/actor -d "{\"name\":\"David Prowse\",\"description\":\"Nemesis of Luke\"}"
 
-curl http://localhost:8080/receipies
+curl http://localhost:8080/actor
 

@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class ActorRepository {
@@ -19,4 +20,8 @@ public class ActorRepository {
         return (List<Actor>) query.getResultList();
     }
 
+    @Transactional
+    public void storeReceipe(final Actor actor) {
+        entityManager.persist(actor);
+    }
 }
