@@ -1,18 +1,20 @@
 package nl.actorcatalogue;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ActorCatalogueController {
 
-    @Value("${app.greeting}")
-    private String greeting;
+    private AppConfig appConfig;
+
+    public ActorCatalogueController(AppConfig appConfig) {
+        this.appConfig = appConfig;
+    }
 
     @RequestMapping("/greeting")
     public String greeting() {
-        return greeting;
+        return appConfig.getGreeting();
     }
 
     @RequestMapping("/actor")
