@@ -10,4 +10,13 @@ public class ActorCatalogueController {
     public String greeting() {
         return "Hello, world!";
     }
+
+    @RequestMapping("/actor")
+    public Actor getAllActors() {
+        Actor actor = new Actor();
+        actor.setName("Harrison Ford");
+        actor.setDescription("Han Solo forever");
+        return actor;
+    }
+
 }
