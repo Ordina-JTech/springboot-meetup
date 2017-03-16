@@ -1,5 +1,8 @@
 package nl.actorcatalogue;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,9 +11,13 @@ public class ActorCatalogueController {
 
     private AppConfig appConfig;
 
-    public ActorCatalogueController(AppConfig appConfig) {
+    @Autowired
+    public ActorCatalogueController(final AppConfig appConfig, final ActorRepository actorRepository) {
         this.appConfig = appConfig;
+        this.actorRepository = actorRepository;
     }
+
+    private ActorRepository actorRepository;
 
     @RequestMapping("/greeting")
     public String greeting() {
@@ -18,11 +25,8 @@ public class ActorCatalogueController {
     }
 
     @RequestMapping("/actor")
-    public Actor getAllActors() {
-        Actor actor = new Actor();
-        actor.setName("Harrison Ford");
-        actor.setDescription("Han Solo forever");
-        return actor;
+    public List<Actor> getAllActors() {
+        return actorRepository.getAllActors();
     }
 
 }
