@@ -2,9 +2,9 @@ pipeline {
     agent any
     stages {
         stage('build') {
-            env.PATH = "${tool 'maven3'}/bin:${env.PATH}"
             steps {
-                sh 'mvn clean install'
+                def mvnHome = tool 'maven3'
+                sh "${mvnHome}/bin/mvn clean install"
             }
         }
     }
