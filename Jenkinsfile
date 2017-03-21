@@ -8,7 +8,7 @@ pipeline {
         }
         stage('checkout') {
             steps {
-                git https://github.com/MichelSchudel/springboot-meetup.git
+                git 'https://github.com/MichelSchudel/springboot-meetup.git'
             }
         }
         stage('build') {
