@@ -95,7 +95,6 @@
                     </resources>
                 </configuration>
             </plugin>
-           docke
 
         </plugins>
     </build>
