@@ -1,10 +1,19 @@
 pipeline {
     agent any
     stages {
+        stage('configure') {
+            steps {
+                env.PATH="${tool ' maven3'}/bin:${env.PATH}
+            }
+        }
+        stage('checkout') {
+            steps {
+                git https://github.com/MichelSchudel/springboot-meetup.git
+            }
+        }
         stage('build') {
             steps {
-                def mvnHome = tool 'maven3'
-                sh "${mvnHome}/bin/mvn clean install"
+                sh 'mvn clean install'
             }
         }
     }
