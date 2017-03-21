@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('configure') {
             steps {
-                env.PATH="${tool ' maven3'}/bin:${env.PATH}
+                env.PATH="${tool ' maven3'}/bin:${env.PATH}"
             }
         }
         stage('checkout') {
