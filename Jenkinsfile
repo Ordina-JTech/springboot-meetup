@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 tool 'maven3'
-                sh 'mvn clean install'
+                sh "${tool 'maven3'}/bin/mvn clean install"
             }
         }
     }
