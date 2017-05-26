@@ -1,4 +1,9 @@
+
+## Curl
 curl -H "Content-Type: application/json" -X POST http://localhost:8080/actor -d "{\"name\":\"David Prowse\",\"description\":\"Nemesis of Luke\"}"
 
 curl http://localhost:8080/actor
 
+
+## Move one commit forward
+git checkout $(git rev-list --topo-order HEAD..origin/master | tail -1)
